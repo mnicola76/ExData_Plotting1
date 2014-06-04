@@ -24,12 +24,12 @@ createPlot4 <- function()
               'numeric') ##Sub_metering_3
     
     ## Load file (no need to read the whole lot)
-    household <- read.csv('household_power_consumption.txt', 
+    household <- read.table('household_power_consumption.txt', 
                           header = TRUE, 
                           sep = ";", 
                           colClasses = cols, 
                           na.strings = "?",
-                          nrows = 100000)
+                          nrows = 1000000)
     
     ## Subset just the 2 Feb days we're interested in
     hhsubset <- subset(household, Date %in% c('1/2/2007', '2/2/2007'))
